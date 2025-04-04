@@ -1,0 +1,309 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Kanban board layout */
+.kanban-board {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.columns-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  height: calc(100% - 60px);
+  padding-bottom: 16px;
+}
+
+/* Column styling */
+.kanban-column {
+  min-width: 280px;
+  width: 280px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  height: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.ant-card-head {
+  background-color: #f0f0f0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.kanban-cards-container {
+  min-height: 10px; /* Important for empty columns */
+  padding: 8px 0;
+}
+
+/* Card styling */
+.kanban-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.kanban-card.completed-card {
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+/* Dragging styles */
+.draggable {
+  transition: transform 0.2s;
+}
+
+.dragging {
+  opacity: 0.7;
+  transform: scale(0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form and modal styles */
+.card-form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card-labels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Card detail modal */
+.card-detail-modal .ant-modal-content {
+  border-radius: 8px;
+}
+
+.card-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-detail-labels {
+  margin-bottom: 16px;
+}
+
+.card-detail-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* Column header title edit input */
+.column-title-input {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 8px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.column-title-input:focus {
+  background-color: white;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .columns-container {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .kanban-column {
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 16px;
+    height: auto;
+    min-height: 300px;
+  }
+
+  /* Additional Drag and Drop styles */
+  .dragging-over {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+
+  /* Ensure the drag handles are properly visible */
+  [data-rbd-drag-handle-draggable-id] {
+    cursor: grab;
+  }
+
+  [data-rbd-drag-handle-draggable-id]:active {
+    cursor: grabbing;
+  }
+
+  /* Improve the placeholder appearance */
+  [data-rbd-placeholder-context-id] {
+    min-height: 30px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+    border: 1px dashed #d9d9d9;
+    border-radius: 4px;
+  }
+
+  /* Make the columns distinct when dragging over */
+  .kanban-column {
+    transition: all 0.2s ease;
+  }
+
+  .kanban-cards-container {
+    transition: background-color 0.2s ease;
+    min-height: 50px; /* Ensure empty columns have some height */
+    padding: 8px;
+  }
+  .kanban-cards-container {
+    transition: background-color 0.2s ease;
+    min-height: 50px; /* Ensure empty columns have some height */
+    padding: 8px;
+  }
+
+  /* Style for Droppable area when being dragged over */
+  .dragging-over {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+
+  /* Ensure the drag handles are properly visible */
+  [data-rbd-drag-handle-draggable-id] {
+    cursor: grab;
+  }
+
+  [data-rbd-drag-handle-draggable-id]:active {
+    cursor: grabbing;
+  }
+
+  /* Improve the placeholder appearance */
+  [data-rbd-placeholder-context-id] {
+    min-height: 30px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+    border: 1px dashed #d9d9d9;
+    border-radius: 4px;
+  }
+  /* Kanban board layout */
+  .kanban-board {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .columns-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    height: calc(100% - 64px);
+    padding-bottom: 16px;
+  }
+
+  /* Column styling */
+  .kanban-column {
+    width: 280px;
+    min-width: 280px;
+    height: 100%;
+  }
+
+  .kanban-cards-container {
+    min-height: 100px;
+    padding: 8px 0;
+  }
+
+  /* Card styling */
+  .kanban-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .kanban-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Drag and drop styling */
+  .dragging {
+    opacity: 0.7 !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .dragging-over {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+  }
+
+  /* Completed card styling */
+  .completed-card {
+    background-color: #f6ffed;
+    border: 1px solid #b7eb8f;
+  }
+}
