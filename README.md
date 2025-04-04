@@ -28,3 +28,4 @@ A powerful and interactive Kanban board built with React, TypeScript, and Vite. 
 -Team Collaboration: Assign tasks and track progress with team member involvement.
 
 -Project Management: Keep tasks organized and easily movable across phases.
+![IMG ALT](https://github.com/samadhii99/kanban-board/blob/0878f1870b687f2c2beaaed4d7d2e3d0d9c9c424/example.PNG)
