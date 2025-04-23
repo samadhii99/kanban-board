@@ -18,7 +18,7 @@ A modern, responsive, and feature-rich Kanban board built with React, TypeScript
 - **🖱️ Drag and Drop**: Intuitive drag-and-drop interface using dnd-kit
 - **📊 Board Customization**: Add, rename, and remove columns as needed
 
-  ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/b3b7a7ddf29f93122fd6ed945a155bd1aae25247/ex.PNG)
+  ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/342cd7d09db2131282913f603fa6297f1e3188fb/ex.PNG)
 
   ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/03529f05c93ccdecdfd52996cc6d0198bc89edff/ex-2.PNG)
 
