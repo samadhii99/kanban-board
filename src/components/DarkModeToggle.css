@@ -1,0 +1,417 @@
+/* Base dark theme styles - Improved palette */
+:root.dark-theme,
+body.dark-theme,
+.dark-theme {
+  /* Background colors - softened with subtle blue undertones */
+  --bg-primary: #1a1b26;
+  --bg-secondary: #24283b;
+  --bg-card: #2a2e45;
+  --bg-modal: #2c3047;
+  --bg-input: #2c3047;
+  --bg-hover: #343b58;
+  --bg-completed: #1c3a2b;
+
+  /* Border colors - subtly visible but not harsh */
+  --border-color: #4a5173;
+  --border-color-light: #3b4261;
+  --border-completed: #2b734c;
+
+  /* Text colors - improved readability with reduced opacity */
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-disabled: rgba(255, 255, 255, 0.45);
+
+  /* Interactive elements */
+  --primary-color: #7aa2f7;
+  --primary-hover: #90b1fc;
+  --heading-color: rgba(255, 255, 255, 0.95);
+
+  /* Status colors for better visual distinction */
+  --todo-header: #454964;
+  --in-progress-header: #3a5173;
+  --done-header: #2a5045;
+}
+
+/* Global overrides */
+.dark-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Apply background color to body and html for full coverage */
+html.dark-theme,
+body.dark-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout components */
+.dark-theme .ant-layout {
+  background-color: var(--bg-primary);
+}
+
+.dark-theme .ant-layout-header {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark-theme .ant-layout-content {
+  background-color: var(--bg-primary);
+}
+
+.dark-theme .ant-layout-footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-layout-sider {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Card components */
+.dark-theme .ant-card {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .ant-card-head {
+  background-color: var(--bg-secondary) !important;
+  color: var(--heading-color);
+  border-bottom-color: var(--border-color);
+}
+
+.dark-theme .ant-card-body {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary);
+}
+
+/* Kanban specific */
+.dark-theme .kanban-board {
+  background-color: var(--bg-primary);
+}
+
+.dark-theme .kanban-column .ant-card-head {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark-theme .kanban-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color-light) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dark-theme .kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .completed-card {
+  background-color: var(--bg-completed) !important;
+  border-color: var(--border-completed) !important;
+}
+
+/* Column type specific styles - improved distinction */
+.dark-theme .kanban-column[data-column-type="todo"] .ant-card-head {
+  background-color: var(--todo-header) !important;
+}
+
+.dark-theme .kanban-column[data-column-type="inProgress"] .ant-card-head {
+  background-color: var(--in-progress-header) !important;
+}
+
+.dark-theme .kanban-column[data-column-type="done"] .ant-card-head {
+  background-color: var(--done-header) !important;
+}
+
+/* Form elements */
+.dark-theme .ant-form-item-label > label {
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-input,
+.dark-theme .ant-input-affix-wrapper,
+.dark-theme .ant-input-number,
+.dark-theme .ant-picker {
+  background-color: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-input-affix-wrapper:hover,
+.dark-theme .ant-input:hover,
+.dark-theme .ant-input-number:hover,
+.dark-theme .ant-picker:hover {
+  border-color: var(--primary-color);
+}
+
+.dark-theme .ant-input-affix-wrapper:focus,
+.dark-theme .ant-input-affix-wrapper-focused,
+.dark-theme .ant-input:focus,
+.dark-theme .ant-input-focused,
+.dark-theme .ant-input-number:focus,
+.dark-theme .ant-input-number-focused,
+.dark-theme .ant-picker:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
+}
+
+.dark-theme .ant-input::placeholder,
+.dark-theme .ant-input-number-input::placeholder {
+  color: var(--text-disabled);
+}
+
+/* Select components */
+.dark-theme .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: var(--bg-input) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .ant-select-dropdown {
+  background-color: var(--bg-modal);
+  border-color: var(--border-color);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.48),
+    0 6px 16px 0 rgba(0, 0, 0, 0.32);
+}
+
+.dark-theme .ant-select-item {
+  color: var(--text-primary);
+}
+
+.dark-theme
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: rgba(122, 162, 247, 0.2);
+}
+
+.dark-theme
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: rgba(122, 162, 247, 0.1);
+}
+
+.dark-theme .ant-select-arrow {
+  color: var(--text-secondary);
+}
+
+/* Checkboxes and radios */
+.dark-theme .ant-checkbox-wrapper,
+.dark-theme .ant-radio-wrapper {
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-checkbox-inner,
+.dark-theme .ant-radio-inner {
+  background-color: var(--bg-input);
+  border-color: var(--border-color);
+}
+
+.dark-theme .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Buttons */
+.dark-theme .ant-btn {
+  background-color: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-btn:hover,
+.dark-theme .ant-btn:focus {
+  background-color: var(--bg-hover);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.dark-theme .ant-btn-primary:hover,
+.dark-theme .ant-btn-primary:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.dark-theme .ant-btn-text {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-btn-text:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .ant-btn-link {
+  color: var(--primary-color);
+  background: transparent;
+  border-color: transparent;
+}
+
+.dark-theme .ant-btn-link:hover {
+  color: var(--primary-hover);
+}
+
+/* Modals and popups */
+.dark-theme .ant-modal-content,
+.dark-theme .ant-modal-header {
+  background-color: var(--bg-modal);
+  border-color: var(--border-color);
+}
+
+.dark-theme .ant-modal-title {
+  color: var(--heading-color);
+}
+
+.dark-theme .ant-modal-close {
+  color: var(--text-disabled);
+}
+
+.dark-theme .ant-modal-close:hover {
+  color: var(--text-primary);
+}
+
+/* Dropdowns and menus */
+.dark-theme .ant-dropdown-menu {
+  background-color: var(--bg-modal);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.48),
+    0 6px 16px 0 rgba(0, 0, 0, 0.32);
+}
+
+.dark-theme .ant-dropdown-menu-item {
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-dropdown-menu-item:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Tables */
+.dark-theme .ant-table {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-table-thead > tr > th {
+  background-color: var(--bg-secondary);
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark-theme .ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark-theme .ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: rgba(122, 162, 247, 0.08);
+}
+
+/* Typography */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6,
+.dark-theme .ant-typography {
+  color: var(--heading-color);
+}
+
+.dark-theme .ant-typography {
+  color: var(--text-primary);
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle {
+  display: inline-flex;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-button.light {
+  color: #f9d71c;
+}
+
+.toggle-button.dark {
+  color: #7aa2f7;
+}
+/* Drawer component */
+.dark-theme .ant-drawer .ant-drawer-content {
+  background-color: var(--bg-modal);
+}
+
+.dark-theme .ant-drawer-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark-theme .ant-drawer-title {
+  color: var(--heading-color);
+}
+
+.dark-theme .ant-drawer-close {
+  color: var(--text-disabled);
+}
+
+.dark-theme .ant-drawer-close:hover {
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-drawer-body {
+  background-color: var(--bg-modal);
+  color: var(--text-primary);
+}
+
+/* Descriptions component (used inside drawer) */
+.dark-theme .ant-descriptions {
+  color: var(--text-primary);
+}
+
+.dark-theme .ant-descriptions-bordered .ant-descriptions-item-label,
+.dark-theme .ant-descriptions-bordered .ant-descriptions-item-content {
+  background-color: var(--bg-modal);
+  border-color: var(--border-color);
+}
+
+.dark-theme .ant-descriptions-bordered .ant-descriptions-view {
+  border-color: var(--border-color);
+}
+
+/* Add this to your dark theme CSS to ensure filter labels have correct color */
+.dark-theme .filter-bar span {
+  color: var(--text-primary); /* This will be white in dark mode */
+}
+
+/* Make sure light theme has the correct setting too */
+.filter-bar span {
+  color: inherit; /* This will be black in light mode by default */
+}
+
+/* You can also add this rule to ensure consistency in all text elements in the filter bar */
+.dark-theme .filter-bar {
+  color: var(--text-primary);
+}
