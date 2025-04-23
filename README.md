@@ -20,7 +20,7 @@ A modern, responsive, and feature-rich Kanban board built with React, TypeScript
 
   ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/342cd7d09db2131282913f603fa6297f1e3188fb/ex.PNG)
 
-  ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/03529f05c93ccdecdfd52996cc6d0198bc89edff/ex-2.PNG)
+  ![Kanban Board Screenshot](https://github.com/samadhii99/kanban-board/blob/f7375a216c77d2b8e0b96fe69055a7ba4af45c3f/ex-2.PNG)
 
 ## 🛠️ Technology Stack
 
